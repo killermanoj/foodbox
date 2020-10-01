@@ -133,7 +133,19 @@ public class PaymentController implements Initializable {
     }
     public void confirmPayment(ActionEvent event){
          try {
-             if(paymentModel.isPaymentOnline()){
+             if(paymentModel.isPaymentOnline()&&paymentModel.isEWallet()){
+		     if(!(walletid.getText().isEmpty())){
+                         warning.setText("Enter Wallet ID");
+                         return;
+                     }else if(!(walletpass.getText().isEmpty())){
+                         warning.setText("enter Wallet Password");
+                         return;
+                     }
+	     if(!auth(walletid,walletpass)){
+		      warning.setText("INVALID USERNAME OR PASSWORD");
+                         return;
+	     }
+             if(paymentModel.isPaymentOnline()&&paymentModel.isCard()){
                  if(!(cardnumtxt.getText().isEmpty()||cardholdertxt.getText().isEmpty()||cvvtxt.getText().isEmpty()||monthtxt.getText().isEmpty()||yeartxt.getText().isEmpty())){
                      
                          
