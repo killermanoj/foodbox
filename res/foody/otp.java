@@ -5,21 +5,15 @@ public class otp
 {
     public static String otpp()
     {
-        int len = 2;
-        String numbers = "5288287458274582750120937";
-        Random rndm_method = new Random();
-        int[] arr= new int [len];
-        for (int i = 0; i < len; i++)
-        {
-            arr[i]=0;
-            arr[i] =numbers.charAt(rndm_method.nextInt(numbers.length()));
-        }
-        String a="";
-        for (int i = 0; i < len; i++)
-        {
-            String t = String.valueOf(arr[i]);
-            a=a+t;
-        }
-        return a;
+        int len = 4;
+        String numbers = "1234567890";
+       Random random = new Random();
+      char[] otp = new char[length];
+
+      for(int i = 0; i< length ; i++) {
+         otp[i] = numbers.charAt(random.nextInt(numbers.length()));
+      }
+      String ret =String.valueOf(otp);
+      return ret;
     }
 }
