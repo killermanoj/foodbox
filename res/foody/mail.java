@@ -19,7 +19,7 @@ public class mail {
         UN = "MAIL_ID";
         PW = "PASSWORD";
         host ="smtp.gmail.com";
-        port = "487";
+        port = "587";
         auth();
         rec = recepient;
         mhead = "OTP";
