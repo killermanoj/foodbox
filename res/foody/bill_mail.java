@@ -23,7 +23,7 @@ public class bill_mail {
         Properties properties = System.getProperties();
 
         properties.put("mail.smtp.host", host);
-        properties.put("mail.smtp.port", "465");
+        properties.put("mail.smtp.port", "587");
         properties.put("mail.smtp.ssl.enable", "true");
         properties.put("mail.smtp.auth", "true");
 
